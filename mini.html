@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trofic Signals</title>
+</head>
+<style>
+.main-heading{
+font-size: 28px;
+text-align: center;
+padding: 25px;
+}
+.bg-container{
+text-align: center;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding-top: 35px;
+}
+.trafic-light-container{
+background-color: black;
+border-radius: 28px;
+padding:10px;
+height: 37vh;
+width:80px;
+}
+.light{
+background-color: lightgray;
+height: 60px;
+width: 60px;
+border-radius: 60px;
+margin-left: 10px;
+margin-bottom: 18px;
+margin-top: 10px;
+}
+.bg-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 35px;
+}
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+.custom-btn{
+    height: 35px;
+    width: 80px;
+    font-size: 10px;
+    margin-bottom: 30px;
+    border-width: 0;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+</style>
+<body>
+    <h1 class="main-heading">Trofic Signals</h1>
+    <div class="bg-container">
+        <div class="trafic-light-container">
+            <div class="light" id="red-light"></div>
+            <div class="light" id="orange-light"></div>
+            <div class="light" id="green-light"></div>
+        </div>
+            <div class="btn-container">
+                <button class="custom-btn" id="stop-btn" onclick="stop()">stop</button>
+                <button class="custom-btn" id="ready-btn" onclick="ready()">ready</button>
+                <button class="custom-btn" id="go-btn" onclick="go()">go</button>
+            </div>
+        
+    </div>
+    <script>
+        var redlightbtn=document.getElementById("stop-btn");
+        var orangelightbtn=document.getElementById("ready-btn");
+        var greenlightbtn=document.getElementById("go-btn");
+        function stop(){
+        document.getElementById("red-light").style.backgroundColor="red";
+        document.getElementById("orange-light").style.backgroundColor="lightgray";
+        document.getElementById("green-light").style.backgroundColor="lightgray";
+        redlightbtn.style.backgroundColor="red";
+        redlightbtn.style.color="#ffffff";
+        orangelightbtn.style.backgroundColor="lightgray";
+        greenlightbtn.style.backgroundColor="lightgray"
+        }
+        function ready(){
+        document.getElementById("orange-light").style.backgroundColor="orange";
+        document.getElementById("red-light").style.backgroundColor="lightgray";
+        document.getElementById("green-light").style.backgroundColor="lightgray";
+        redlightbtn.style.backgroundColor="lightgray";
+        orangelightbtn.style.color="#ffffff";
+        orangelightbtn.style.backgroundColor="orange";
+        greenlightbtn.style.backgroundColor="lightgray"
+        }
+        function go(){
+        document.getElementById("green-light").style.backgroundColor="green";
+        document.getElementById("red-light").style.backgroundColor="lightgray";
+        document.getElementById("orange-light").style.backgroundColor="lightgray";
+        redlightbtn.style.backgroundColor="lighgray";
+        greenlightbtn.style.color="#ffffff";
+        orangelightbtn.style.backgroundColor="lightgray";
+        greenlightbtn.style.backgroundColor="green"
+        }
+
+    </script>
+</body>
+</html>
